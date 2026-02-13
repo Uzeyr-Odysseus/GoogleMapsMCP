@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-google-maps
+  labels:
+    app: mcp-google-maps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-google-maps
+  template:
+    metadata:
+      labels:
+        app: mcp-google-maps
+    spec:
+      containers:
+        - name: mcp-google-maps
+          image: asia-southeast1-docker.pkg.dev/askii-dev-ase1-7e11c63c/mcp-google-maps/server:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: PORT
+              value: "3000"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcp-google-maps-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: mcp-google-maps
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000

@@ -39,7 +39,6 @@ export class BaseMcpServer {
       },
       {
         capabilities: {
-          logging: {},
           tools: {},
         },
       }
