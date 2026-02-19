@@ -48,75 +48,6 @@ All tools and features are confirmed functional through real-world testing.
 - **Multiple Connection Support**: Handle multiple concurrent client connections
 - **Echo Service**: Built-in testing tool for MCP server functionality
 
-## Installation
-
-> ⚠️ **Important Notice**: This server uses HTTP transport, not stdio. Direct npx usage in MCP Server Settings is **NOT supported**.
-
-### Method 1: Global Installation (Recommended)
-
-```bash
-# Install globally
-npm install -g @cablate/mcp-google-map
-
-# Run the server
-mcp-google-map --port 3000 --apikey "your_api_key_here"
-
-# Using short options
-mcp-google-map -p 3000 -k "your_api_key_here"
-```
-
-### Method 2: Using npx (Quick Start)
-
-> ⚠️ **Warning**: Cannot be used directly in MCP Server Settings with stdio mode
-
-**Step 1: Launch HTTP Server in Terminal**
-
-```bash
-# Run in a separate terminal
-npx @cablate/mcp-google-map --port 3000 --apikey "YOUR_API_KEY"
-
-# Or with environment variable
-GOOGLE_MAPS_API_KEY=YOUR_API_KEY npx @cablate/mcp-google-map
-```
-
-
-### Server Information
-
-- **Endpoint**: `http://localhost:3000/mcp`
-- **Transport**: HTTP (not stdio)
-- **Tools**: 8 Google Maps tools available
-
-### API Key Configuration
-
-API keys can be provided in three ways (priority order):
-
-1. **HTTP Headers** (Highest priority)
-
-   ```json
-   // MCP Client config
-   {
-     "mcp-google-map": {
-       "transport": "streamableHttp",
-       "url": "http://localhost:3000/mcp",
-       // if your MCP Client support 'headers'
-       "headers": {
-         "X-Google-Maps-API-Key": "YOUR_API_KEY" 
-       }
-     }
-   }
-   ```
-
-2. **Command Line**
-
-   ```bash
-   mcp-google-map --apikey YOUR_API_KEY
-   ```
-
-3. **Environment Variable** (.env file or command line)
-   ```env
-   GOOGLE_MAPS_API_KEY=your_api_key_here
-   MCP_SERVER_PORT=3000
-   ```
 
 ## Available Tools
 
@@ -132,31 +63,6 @@ The server provides the following tools:
 6. **maps_directions** - Get detailed turn-by-turn navigation directions between two locations
 7. **maps_elevation** - Get elevation data (height above sea level) for specific geographic locations
 
-## Development
-
-### Local Development
-
-```bash
-# Clone the repository
-git clone https://github.com/cablate/mcp-google-map.git
-cd mcp-google-map
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env with your API key
-
-# Build the project
-npm run build
-
-# Start the server
-npm start
-
-# Or run in development mode
-npm run dev
-```
 
 ### Project Structure
 
