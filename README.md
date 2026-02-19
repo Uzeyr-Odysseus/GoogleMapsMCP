@@ -1,17 +1,7 @@
-[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/cablate-mcp-google-map-badge.png)](https://mseep.ai/app/cablate-mcp-google-map)
-
-<a href="https://glama.ai/mcp/servers/@cablate/mcp-google-map">
-  <img width="380" height="200" src="https://glama.ai/mcp/servers/@cablate/mcp-google-map/badge" alt="Google Map Server MCP server" />
-</a>
-
 # MCP Google Map Server
 
 A powerful Model Context Protocol (MCP) server providing comprehensive Google Maps API integration with streamable HTTP transport support and LLM processing capabilities.
 
-## 🙌 Special Thanks
-
-This project has received contributions from the community.  
-Special thanks to [@junyinnnn](https://github.com/junyinnnn) for helping add support for `streamablehttp`.
 
 ## ✅ Testing Status
 
@@ -227,54 +217,3 @@ src/
 - DNS rebinding protection available for production
 - Input validation using Zod schemas
 - Error handling and logging
-
-## License
-
-MIT
-
-## Contributing
-
-Community participation and contributions are welcome! Here's how you can contribute:
-
-- ⭐️ Star the project if you find it helpful
-- 🐛 Submit Issues: Report bugs or provide suggestions
-- 🔧 Create Pull Requests: Submit code improvements
-- 📖 Documentation: Help improve documentation
-
-## Contact
-
-If you have any questions or suggestions, feel free to reach out:
-
-- 📧 Email: [reahtuoo310109@gmail.com](mailto:reahtuoo310109@gmail.com)
-- 💻 GitHub: [CabLate](https://github.com/cablate/)
-- 🤝 Collaboration: Welcome to discuss project cooperation
-- 📚 Technical Guidance: Sincere welcome for suggestions and guidance
-
-## Changelog
-
-### v0.0.19 (Latest)
-
-- **New Places API Integration**: Updated to use Google's new Places API (New) instead of the legacy API to resolve HTTP 403 errors and ensure continued functionality.
-
-### v0.0.18
-
-- **Error response improvements**: Now all error messages are in English with more detailed information (previously in Chinese)
-
-### v0.0.17
-
-- **Added HTTP Header Authentication**: Support for passing API keys via `X-Google-Maps-API-Key` header in MCP Client config
-- **Fixed Concurrent User Issues**: Each session now uses its own API key without conflicts
-- **Fixed npx Execution**: Resolved module bundling issues
-- **Improved Documentation**: Clearer setup instructions
-
-### v0.0.14
-
-- Added streamable HTTP transport support
-- Improved CLI interface with emoji indicators
-- Enhanced error handling and logging
-- Added comprehensive tool descriptions for LLM integration
-- Updated to latest MCP SDK version
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=cablate/mcp-google-map&type=Date)](https://www.star-history.com/#cablate/mcp-google-map&Date)
