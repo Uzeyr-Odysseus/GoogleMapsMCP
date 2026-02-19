@@ -79,28 +79,6 @@ npx @cablate/mcp-google-map --port 3000 --apikey "YOUR_API_KEY"
 GOOGLE_MAPS_API_KEY=YOUR_API_KEY npx @cablate/mcp-google-map
 ```
 
-**Step 2: Configure MCP Client to Use HTTP**
-
-```json
-{
-  "mcp-google-map": {
-    "transport": "http",
-    "url": "http://localhost:3000/mcp"
-  }
-}
-```
-
-### ❌ Common Mistake to Avoid
-
-```json
-// This WILL NOT WORK - stdio mode not supported with npx
-{
-  "mcp-google-map": {
-    "command": "npx",
-    "args": ["@cablate/mcp-google-map"]
-  }
-}
-```
 
 ### Server Information
 
